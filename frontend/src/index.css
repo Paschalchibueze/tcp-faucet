@@ -1,0 +1,66 @@
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-surface: #0f0f1a;
+  --bg-card: #13131f;
+  --bg-card-hover: #181828;
+  --border: #1e1e35;
+  --border-bright: #2a2a4a;
+  --accent: #00e5ff;
+  --accent-dim: #00b8cc;
+  --accent-glow: rgba(0, 229, 255, 0.15);
+  --accent-glow-strong: rgba(0, 229, 255, 0.3);
+  --text-primary: #e8e8f0;
+  --text-secondary: #7a7a9a;
+  --text-muted: #4a4a6a;
+  --success: #00ff88;
+  --success-glow: rgba(0, 255, 136, 0.15);
+  --error: #ff4466;
+  --error-glow: rgba(255, 68, 102, 0.15);
+  --warning: #ffaa00;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --radius: 6px;
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  min-height: 100vh;
+  overflow-x: hidden;
+  /* Geometric grid background */
+  background-image:
+    linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+::selection {
+  background: var(--accent-glow-strong);
+  color: var(--accent);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-bright);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dim);
+}

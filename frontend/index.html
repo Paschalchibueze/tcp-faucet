@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TCP Faucet — CrypticalPTestToken</title>
+
+    <!--
+      [F-01] Content Security Policy
+      - default-src 'none': block everything by default
+      - script-src 'self' + hCaptcha CDN only
+      - style-src 'self' + Google Fonts + unsafe-inline (required by React)
+      - connect-src 'self' + hCaptcha API
+      - frame-src hCaptcha (renders in an iframe)
+      - img-src 'self' data: (React may use data URIs)
+      - font-src Google Fonts
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'none';
+        script-src 'self' https://js.hcaptcha.com https://newassets.hcaptcha.com 'unsafe-inline';
+        style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+        font-src https://fonts.gstatic.com;
+        connect-src 'self' https://api.hcaptcha.com;
+        frame-src https://newassets.hcaptcha.com;
+        img-src 'self' data: https://newassets.hcaptcha.com;
+      "
+    />
+
+    <!-- [F-05] Referrer Policy — don't leak URL info to third parties -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- [F-05] Permissions Policy — disable unused browser APIs -->
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=()"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
