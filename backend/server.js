@@ -179,6 +179,9 @@ function auditLog(event, data = {}) {
 
 // ─── ROUTES ───────────────────────────────────────────────────────────────────
 
+// Handle OPTIONS preflight for all API routes
+app.options('*', strictCors, (_req, res) => res.sendStatus(204));
+
 // /healthz — intentionally open, no CORS restriction (UptimeRobot has no Origin)
 app.get('/healthz', (_req, res) => res.status(200).json({ status: 'ok' }));
 
