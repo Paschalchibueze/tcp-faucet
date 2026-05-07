@@ -15,18 +15,18 @@
       - img-src 'self' data: (React may use data URIs)
       - font-src Google Fonts
     -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="
-        default-src 'none';
-        script-src 'self' https://js.hcaptcha.com https://newassets.hcaptcha.com 'unsafe-inline';
-        style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
-        font-src https://fonts.gstatic.com;
-        connect-src 'self' https://api.hcaptcha.com; https://tcp-faucet-backend.onrender.com;
-        frame-src https://newassets.hcaptcha.com;
-        img-src 'self' data: https://newassets.hcaptcha.com;
-      "
-    />
+  <meta
+  http-equiv="Content-Security-Policy"
+  content="
+    default-src 'none';
+    script-src 'self' https://js.hcaptcha.com https://newassets.hcaptcha.com 'unsafe-inline';
+    style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+    font-src https://fonts.gstatic.com;
+    connect-src 'self' https://api.hcaptcha.com https://tcp-faucet-backend.onrender.com;
+    frame-src https://newassets.hcaptcha.com;
+    img-src 'self' data: https://newassets.hcaptcha.com;
+  "
+/>
 
     <!-- [F-05] Referrer Policy — don't leak URL info to third parties -->
     <meta name="referrer" content="strict-origin-when-cross-origin" />
