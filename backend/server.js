@@ -11,6 +11,7 @@ const REQUIRED_ENV = [
   'FAUCET_PRIVATE_KEY',
   'TOKEN_CONTRACT_ADDRESS',
   'HCAPTCHA_SECRET_KEY',
+  'HCAPTCHA_SITE_KEY',
 ];
 const missingEnv = REQUIRED_ENV.filter((k) => !process.env[k]);
 if (missingEnv.length > 0) {
@@ -146,6 +147,7 @@ async function verifyHcaptcha(token, remoteIp) {
     secret: process.env.HCAPTCHA_SECRET_KEY,
     response: token,
     ...(remoteIp && { remoteip: remoteIp }),
+    ...(process.env.HCAPTCHA_SITE_KEY && { sitekey: process.env.HCAPTCHA_SITE_KEY }),
   });
 
   const res = await fetch('https://api.hcaptcha.com/siteverify', {
@@ -179,7 +181,8 @@ function auditLog(event, data = {}) {
 
 // ─── ROUTES ───────────────────────────────────────────────────────────────────
 
-// Handle OPTIONS preflight for all API routes
+// OPTIONS preflight — required for browser CORS preflight on POST /api/* routes
+// strictCors populates Access-Control-Allow-* headers automatically
 app.options('*', strictCors, (_req, res) => res.sendStatus(204));
 
 // /healthz — intentionally open, no CORS restriction (UptimeRobot has no Origin)
