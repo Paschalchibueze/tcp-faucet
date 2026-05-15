@@ -249,7 +249,7 @@ export default function App() {
         <div className="hero-inner">
           <div className="hero-tag">Cryptical P Test Token</div>
           <h1 className="hero-title">
-            TCP: A Use Case Token Design Implementation<br className="hero-br" />
+            TCP : A Use Case Token Design Implementation<br className="hero-br" />
             for Freelance Payment
           </h1>
           <p className="hero-sub">
@@ -480,7 +480,7 @@ export default function App() {
       {/* ── FOOTER ── */}
       <footer className="footer">
         <div className="footer-inner">
-          <span className="footer-left">CrypticalPTestToken (TCP) · BSC Testnet · Chain ID 97 · PACI10©  </span>
+          <span className="footer-left">CrypticalPTestToken (TCP) · BSC Testnet · Chain ID 97 · PACI10 ©  </span>
           <div className="footer-links">
             <a href={`${TOKEN.explorerBase}/token/${TOKEN.contractAddress}`} target="_blank" rel="noopener noreferrer">
               BSCScan ↗
