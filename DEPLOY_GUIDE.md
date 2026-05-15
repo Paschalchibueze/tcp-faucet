@@ -166,9 +166,9 @@ git push origin main
 ### Backend (.env / Render Environment)
 | Variable | Description | Secret? |
 |---|---|---|
-| `FAUCET_PRIVATE_KEY` | Faucet wallet private key | ✅ YES — never expose |
+| `FAUCET_PRIVATE_KEY` | Faucet wallet private key |  YES — never expose |
 | `TOKEN_CONTRACT_ADDRESS` | TCP contract address on BSC Testnet | No |
-| `HCAPTCHA_SECRET_KEY` | hCaptcha server-side secret | ✅ YES — never expose |
+| `HCAPTCHA_SECRET_KEY` | hCaptcha server-side secret |  YES — never expose |
 | `FAUCET_AMOUNT_TCP` | TCP to send per request (default: 100) | No |
 | `FRONTEND_URL` | Your frontend Render URL (for CORS) | No |
 | `PORT` | Set automatically by Render | No |
@@ -200,3 +200,6 @@ git push origin main
 | "INSUFFICIENT_FUNDS" | Faucet wallet needs more tBNB for gas |
 | Backend sleeping on first request | Set up UptimeRobot (Step 5) |
 | Vite build fails | Confirm `VITE_BACKEND_URL` and `VITE_HCAPTCHA_SITE_KEY` are set in Render static site env vars |
+
+### 
+AUTHOR --- PACI10.

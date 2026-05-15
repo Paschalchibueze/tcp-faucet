@@ -123,7 +123,7 @@ const walletSteps = [
 const faqItems = [
   {
     q: 'What is TCP used for?',
-    a: 'TCP (CrypticalPTestToken) demonstrates a Freelance Payment reputation system built on BNB Smart Chain Testnet. It is a use case token implementation for testing token-based freelance payment workflows — developers can use it to validate payment logic and smart contract interactions.',
+    a: 'TCP (CrypticalPTestToken) simulates/ demonstrates a Freelance Payment reputation system built on BNB Smart Chain Testnet. It is a use case token implementation for testing token-based freelance payment workflows — developers can use it to validate payment logic and smart contract interactions.',
   },
   {
     q: 'How often can I claim tokens?',
@@ -138,8 +138,8 @@ const faqItems = [
     a: 'No. TCP exists only on BNB Smart Chain Testnet (Chain ID 97). Testnet tokens have zero real-world monetary value and are intended purely for development and testing purposes.',
   },
   {
-    q: 'What if the faucet balance shows zero?',
-    a: 'The faucet wallet holds a limited supply. If it runs out, the admin needs to top it up by sending more TCP from the main wallet. Contact the project admin if the balance is critically low.',
+    q: 'What if the faucet shows zero?',
+    a: 'The faucet wallet holds a limited supply. If it runs out, the admin needs to top it up by sending more TCP from the main wallet.',
   },
 ];
 
@@ -247,7 +247,7 @@ export default function App() {
       {/* ── HERO ── */}
       <header className="hero">
         <div className="hero-inner">
-          <div className="hero-tag">Use Case Token</div>
+          <div className="hero-tag">Cryptical P Test Token</div>
           <h1 className="hero-title">
             TCP: A Use Case Token Design Implementation<br className="hero-br" />
             for Freelance Payment
@@ -373,10 +373,6 @@ export default function App() {
                 <div className="stat-value">24 hours</div>
               </div>
               <div className="stat-card card">
-                <div className="stat-label">Faucet balance</div>
-                <div className="stat-value">{faucetBalance !== null ? `${faucetBalance}` : '—'}</div>
-              </div>
-              <div className="stat-card card">
                 <div className="stat-label">Network</div>
                 <div className="stat-value small">BSC Testnet</div>
               </div>
@@ -484,7 +480,7 @@ export default function App() {
       {/* ── FOOTER ── */}
       <footer className="footer">
         <div className="footer-inner">
-          <span className="footer-left">CrypticalPTestToken (TCP) · BSC Testnet · Chain ID 97</span>
+          <span className="footer-left">CrypticalPTestToken (TCP) · BSC Testnet · Chain ID 97 · PACI10©  </span>
           <div className="footer-links">
             <a href={`${TOKEN.explorerBase}/token/${TOKEN.contractAddress}`} target="_blank" rel="noopener noreferrer">
               BSCScan ↗
